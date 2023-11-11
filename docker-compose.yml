@@ -1,0 +1,13 @@
+version: '3'
+services:
+  minecraft-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "25565:25565"
+    volumes:
+      - ./world:/minecraft/world
+    environment:
+      - EULA=true
+    container_name: minecraft-server
